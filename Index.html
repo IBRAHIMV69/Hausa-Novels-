@@ -168,7 +168,7 @@
 
         /* Discover Section */
         .discover-container {
-            margin-top: 50px;
+            margin-top: 55px;
             padding: 8px;
         }
         .discover-title {
@@ -225,7 +225,7 @@
     background: linear-gradient(to right, #004d00, #00b300);
     color: #fff;
     border: 1px solid #ccc;
-    padding: 5px 5px;
+    padding: 5px 2px;
     border-radius: 8px;
     cursor: pointer;
     font-size: 10px;
@@ -240,11 +240,11 @@
 
         /* Category Section */
         .category-container {
-            margin-top: 15px;
+            margin-top: 8px;
             padding: 2px;
         }
         .category-title {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
             margin-bottom: 15px;
             display: flex;
@@ -815,13 +815,13 @@ footer.hide {
 }
 /* Partners Section */
         .partners-container {
-            margin-top: 20px;
+            margin-top: 15px;
             padding: 10px;
         }
 
         .partners-title {
             font-size: 18px;
-            text-align: center;
+            text-align: left;
             font-weight: bold;
             margin-bottom: 15px;
         }
@@ -1029,7 +1029,7 @@ footer.hide {
         videoUrl: "https://iuptelegram.blogspot.com/2025/02/one.html",
         adUrl: "https://www.effectiveratecpm.com/yj516zqeuh?key=67623d7811021ba7d072604ff121c586",
         title: "TSANTSAR SO",
-        category: "Love at first sentence 📖💘",
+        category: "Love at first sentence💘",
     },        
     {
         imgUrl: "https://bitly.cx/JAxKn",
@@ -1099,7 +1099,7 @@ footer.hide {
         videoUrl: "https://iuptelegram.blogspot.com/2025/02/yaro-ne-dasunan-allah-mai-rahma-mai-jin.html",
         adUrl: "https://www.effectiveratecpm.com/vuq0mnejn?key=7241c685c3c694f609c9eebacbd85a50",
         title: "YARO NE",
-        category: "Love at first sentence 📖💘",
+        category: "Love at first sentence💘",
     },
     {
         imgUrl: "https://bit.ly/3Pi2GYX",
@@ -1223,7 +1223,7 @@ const createDiscoverSection = () => {
             <p>${item.description}</p>
         `;
 
-        // Add the "Watch Ad 🔒" button
+        // Add the "Watch Ads 🔒" button
         const button = document.createElement('button');
         const visited = localStorage.getItem(`${item.title}-ad-visited`);
         const unlockTime = localStorage.getItem(`${item.title}-unlock-time`);
@@ -1237,9 +1237,9 @@ const createDiscoverSection = () => {
             button.onclick = () => openVideoNav(item.videoUrl, item.title);
         } else {
             // Video is locked
-            button.textContent = 'Watch Ad 🔒';
+            button.textContent = 'Watch Ads 🔒';
             button.style.backgroundColor = '#ff0000';
-            img.onclick = () => showNotification('Please watch the ad to Unlock this Novel.', 'warning');
+            img.onclick = () => showNotification('Please watch the ads to Unlock this Novel.', 'warning');
             button.onclick = () => visitAd(item.title, item.adUrl, button);
         }
 
@@ -1567,9 +1567,9 @@ const createFrame = (item) => {
         button.onclick = () => openVideoNav(item.videoUrl, item.title); // Open URL directly
     } else {
         // Video is locked
-        button.textContent = 'Watch Ad 🔒';
+        button.textContent = 'Watch Ads 🔒';
         button.style.backgroundColor = '#ff0000';
-        img.onclick = () => showNotification('Please Watch the Ad to Unlock this Novel.', 'warning');
+        img.onclick = () => showNotification('Please Watch the Ads to Unlock this Novel.', 'warning');
         button.onclick = () => visitAd(item.title, item.adUrl, button);
     }
 
@@ -1725,12 +1725,12 @@ const updateHistoryList = () => {
             img.onclick = () => openVideoNav(item.videoUrl, item.title);
         } else {
             // Video is locked
-            button.textContent = 'Watch Ad 🔒';
+            button.textContent = 'Watch Ads 🔒';
             button.style.backgroundColor = '#ff0000';
             button.onclick = () => visitAd(item.title, item.adUrl, button);
 
             // Add click event to the image to show a notification
-            img.onclick = () => showNotification('Please Watch the Ad to Unlock this Novel.', 'warning');
+            img.onclick = () => showNotification('Please Watch the Ads to Unlock this Novel.', 'warning');
         }
 
         historyItem.appendChild(img);
@@ -1903,7 +1903,7 @@ setTimeout(() => {
     { 
         img: "https://img.youtube.com/vi/22w7z_lT6YM/maxresdefault.jpg", 
         title: "Dragon", 
-        buttonTitle: "Free Download", 
+        buttonTitle: "Watch Now", 
         link: "https://moviebox-drs.netlify.app/"
     },
     { 
