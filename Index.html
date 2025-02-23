@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Unlock System</title>
+    <title>Hausa Novels</title>
     <!-- Add Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -1446,12 +1446,18 @@ const showHomeVideos = () => {
 };
 
 const showUnlockedVideos = () => {
-    const unlockedData = data.filter(item => {
-        const visited = localStorage.getItem(`${item.title}-ad-visited`);
-        const unlockTime = localStorage.getItem(`${item.title}-unlock-time`);
-        const currentTime = Date.now();
-        return visited && unlockTime && (currentTime - parseInt(unlockTime)) < 7400000; // Check if video is unlocked
-    });
+    const unlockedData = data
+        .filter(item => {
+            const visited = localStorage.getItem(`${item.title}-ad-visited`);
+            const unlockTime = localStorage.getItem(`${item.title}-unlock-time`);
+            const currentTime = Date.now();
+            return visited && unlockTime && (currentTime - parseInt(unlockTime)) < 7400000; // Check if video is unlocked
+        })
+        .sort((a, b) => {
+            const unlockTimeA = localStorage.getItem(`${a.title}-unlock-time`);
+            const unlockTimeB = localStorage.getItem(`${b.title}-unlock-time`);
+            return unlockTimeB - unlockTimeA; // Sort by most recent unlock time
+        });
 
     const gridContainer = document.getElementById('grid-container');
     gridContainer.innerHTML = '';
@@ -1478,7 +1484,7 @@ const showUnlockedVideos = () => {
     };
     gridContainer.appendChild(backButton);
 
-    // Add unlocked videos to the list
+    // Add sorted unlocked videos to the list
     if (unlockedData.length > 0) {
         unlockedData.forEach(item => {
             const listItem = createUnlockedListItem(item);
@@ -1621,7 +1627,7 @@ const createUnlockedListItem = (item) => {
     button.style.borderRadius = '8px';
     button.style.cursor = 'pointer';
     button.style.fontSize = '12px';
-    button.onclick = () => openVideoNav(item.videoUrl, item.title); // Open URL directly
+    button.onclick = () => openVideoNav(item.videoUrl, item.title);
 
     // Add click event to the image to open the video URL directly
     img.onclick = () => openVideoNav(item.videoUrl, item.title);
