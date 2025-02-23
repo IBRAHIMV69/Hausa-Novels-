@@ -1103,10 +1103,10 @@ footer.hide {
         category: "Love at first sentence💘",
     },
     {
-        imgUrl: "https://bit.ly/3Pi2GYX",
+        imgUrl: "https://bitly.cx/XMtdI",
         videoUrl: "https://youtube.com/embed/Ma9xquhYyT0",
         adUrl: "https://www.effectiveratecpm.com/yj516zqeuh?key=67623d7811021ba7d072604ff121c586",
-        title: "GOATMAN",
+        title: "RAUNIN ZUCIYA",
         category: "Dangerous Love 💔🔥",
         description: "A terrifying tale of a mythical creature.",
     },
@@ -1359,7 +1359,7 @@ const showProfileSection = () => {
     };
     gridContainer.appendChild(backButton);
 
-    // Add profile content
+    // Profile content
     const profileContent = [
         {
             name: "PalmPay - Transfers, Bills,",
@@ -1399,7 +1399,11 @@ const showProfileSection = () => {
         },
     ];
 
-    profileContent.forEach(item => {
+    // Shuffle the profile content
+    const shuffledProfileContent = shuffleArray(profileContent);
+
+    // Add shuffled profile content to the grid
+    shuffledProfileContent.forEach(item => {
         const profileItem = createProfileItem(item);
         gridContainer.appendChild(profileItem);
     });
@@ -1509,7 +1513,7 @@ const createProfileItem = (item) => {
     description.style.color = '#777';
 
     const openButton = document.createElement('button');
-    openButton.textContent = 'Open';
+    openButton.textContent = 'Install';
     openButton.style.backgroundColor = '#00b300';
     openButton.style.color = '#fff';
     openButton.style.border = 'none';
@@ -2027,11 +2031,11 @@ createSlides();
 setInterval(nextSlide, 5000); // Auto-slide every 5 seconds
 
 const partnersData = [
-            { imgUrl: "https://bitly.cx/ph6T1", videoUrl: "https://youtube.com/embed/3_i60BLtN_s", title: "Video 1" },
-            { imgUrl: "https://bitly.cx/0zlN", videoUrl: "https://youtube.com/embed/CumW3IY1mMg", title: "Video 2" },
-            { imgUrl: "https://bitly.cx/ph6T1", videoUrl: "https://youtube.com/embed/SFtKVKoscqA", title: "Video 3" },
-            { imgUrl: "https://bitly.cx/0zlN", videoUrl: "https://youtube.com/embed/hJzZRl1C8X0", title: "Video 4" },
-            { imgUrl: "https://bitly.cx/ph6T1", videoUrl: "https://youtube.com/embed/BjkncLAZu80", title: "Video 5" },
+            { imgUrl: "https://bitly.cx/mXvED", videoUrl: "https://youtube.com/embed/3_i60BLtN_s", title: "Gidan Sarauta" },
+            { imgUrl: "https://bitly.cx/kzrm", videoUrl: "https://youtube.com/embed/CumW3IY1mMg", title: "Labarina" },
+            { imgUrl: "https://bitly.cx/mXvED", videoUrl: "https://youtube.com/embed/SFtKVKoscqA", title: "Gidan Sarauta" },
+            { imgUrl: "https://bitly.cx/kzrm", videoUrl: "https://youtube.com/embed/hJzZRl1C8X0", title: "Labarina" },
+            { imgUrl: "https://bitly.cx/mXvED", videoUrl: "https://youtube.com/embed/BjkncLAZu80", title: "Gidan Sarauta" },
         ];
 
         const partnersScroll = document.getElementById('partners-scroll');
