@@ -224,14 +224,18 @@
         .discover-item button {
     background: linear-gradient(to right, #004d00, #00b300);
     color: #fff;
-    border: 1px solid #ccc;
-    padding: 5px 2px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 10px;
-    text-align: center;
-    width: 100%;
-    margin-top: 5px;
+            border: 1px solid #ccc;
+            padding: 5px 2px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-top: 5px;            
+            font-size: 10px;
+            text-align: center;
+    gap: 6px; /* spacing between icon and text */
 }
 
 .discover-item button:hover {
@@ -315,7 +319,8 @@
             width: 100%;            
             font-size: 10px;
             text-align: center;
-        }
+    gap: 6px; /* spacing between icon and text */
+}
         .frame .content button:hover {
             background-color: #FF0000;
         }
@@ -1239,7 +1244,7 @@ const createDiscoverSection = () => {
             button.onclick = () => openVideoNav(item.videoUrl, item.title);
         } else {
             // Video is locked
-            button.textContent = 'Watch Ads 🔒';
+            button.innerHTML = '<i class="fas fa-ad"></i> Ads';
             button.style.backgroundColor = '#ff0000';
             img.onclick = () => showNotification('Please watch the ads to Unlock this Novel.', 'warning');
             button.onclick = () => visitAd(item.title, item.adUrl, button);
@@ -1558,7 +1563,7 @@ const createFrame = (item) => {
         button.onclick = () => openVideoNav(item.videoUrl, item.title); // Open URL directly
     } else {
         // Video is locked
-        button.textContent = 'Watch Ads 🔒';
+        button.innerHTML = '<i class="fas fa-ad"></i> Ads';
         button.style.backgroundColor = '#ff0000';
         img.onclick = () => showNotification('Please Watch the Ads to Unlock this Novel.', 'warning');
         button.onclick = () => visitAd(item.title, item.adUrl, button);
@@ -1716,7 +1721,7 @@ const updateHistoryList = () => {
             img.onclick = () => openVideoNav(item.videoUrl, item.title);
         } else {
             // Video is locked
-            button.textContent = 'Watch Ads 🔒';
+            button.innerHTML = '<i class="fas fa-ad"></i> Ads';
             button.style.backgroundColor = '#ff0000';
             button.onclick = () => visitAd(item.title, item.adUrl, button);
 
