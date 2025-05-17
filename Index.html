@@ -1238,7 +1238,7 @@ const createDiscoverSection = () => {
 
         if (visited && unlockTime && (currentTime - parseInt(unlockTime)) < 7400000) {
             // Video is unlocked
-            button.textContent = 'Open ✅';
+            button.textContent = 'OPEN';
             button.style.backgroundColor = '#00b300';
             img.onclick = () => openVideoNav(item.videoUrl, item.title);
             button.onclick = () => openVideoNav(item.videoUrl, item.title);
@@ -1557,7 +1557,7 @@ const createFrame = (item) => {
 
     if (visited && unlockTime && (currentTime - parseInt(unlockTime)) < 7400000) {
         // Video is unlocked
-        button.textContent = 'Open ✅';
+        button.textContent = 'OPEN';
         button.style.backgroundColor = '#00b300';
         img.onclick = () => openVideoNav(item.videoUrl, item.title); // Open URL directly
         button.onclick = () => openVideoNav(item.videoUrl, item.title); // Open URL directly
@@ -1609,7 +1609,7 @@ const createUnlockedListItem = (item) => {
     description.style.color = '#777';
 
     const button = document.createElement('button');
-    button.textContent = 'Open ✅';
+    button.textContent = 'OPEN';
     button.style.backgroundColor = '#00b300';
     button.style.color = '#fff';
     button.style.border = '1px solid #ccc';
@@ -1641,7 +1641,7 @@ const visitAd = (videoId, adUrl, button) => {
     localStorage.setItem(`${videoId}-unlock-time`, unlockTime);
 
     // Update the button text and color
-    button.textContent = 'Open ✅';
+    button.textContent = 'OPEN';
     button.style.backgroundColor = '#00b300';
 
     // Find the associated image and update its click behavior
@@ -1713,7 +1713,7 @@ const updateHistoryList = () => {
 
         if (visited && unlockTime && (currentTime - parseInt(unlockTime)) < 7200000) {
             // Video is unlocked
-            button.textContent = 'Open ✅';
+            button.textContent = 'OPEN';
             button.style.backgroundColor = '#00b300';
             button.onclick = () => openVideoNav(item.videoUrl, item.title);
 
